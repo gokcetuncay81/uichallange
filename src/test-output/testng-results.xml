@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestSuite" duration-ms="13369" started-at="2018-01-28T19:45:42Z" finished-at="2018-01-28T19:45:55Z">
+    <groups>
+    </groups>
+    <test name="ChromeTest" duration-ms="5455" started-at="2018-01-28T19:45:42Z" finished-at="2018-01-28T19:45:47Z">
+      <class name="com.adidas.app.TestSuite.AdidasUITests">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@546a03af]" name="setup" is-config="true" duration-ms="3562" started-at="2018-01-28T21:45:42Z" finished-at="2018-01-28T21:45:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="FavoritesPage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@546a03af]" name="FavoritesPage" duration-ms="211" started-at="2018-01-28T21:45:45Z" finished-at="2018-01-28T21:45:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FavoritesPage -->
+        <test-method status="PASS" signature="OpenHomePage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@546a03af]" name="OpenHomePage" duration-ms="327" started-at="2018-01-28T21:45:45Z" finished-at="2018-01-28T21:45:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenHomePage -->
+        <test-method status="PASS" signature="ProductDetailsPage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@546a03af]" name="ProductDetailsPage" duration-ms="1256" started-at="2018-01-28T21:45:46Z" finished-at="2018-01-28T21:45:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductDetailsPage -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@546a03af]" name="AfterTest" is-config="true" duration-ms="90" started-at="2018-01-28T21:45:47Z" finished-at="2018-01-28T21:45:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- com.adidas.app.TestSuite.AdidasUITests -->
+    </test> <!-- ChromeTest -->
+    <test name="FirefoxTest" duration-ms="7905" started-at="2018-01-28T19:45:47Z" finished-at="2018-01-28T19:45:55Z">
+      <class name="com.adidas.app.TestSuite.AdidasUITests">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@35bbe5e8]" name="setup" is-config="true" duration-ms="4802" started-at="2018-01-28T21:45:47Z" finished-at="2018-01-28T21:45:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="FavoritesPage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@35bbe5e8]" name="FavoritesPage" duration-ms="239" started-at="2018-01-28T21:45:52Z" finished-at="2018-01-28T21:45:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FavoritesPage -->
+        <test-method status="PASS" signature="OpenHomePage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@35bbe5e8]" name="OpenHomePage" duration-ms="581" started-at="2018-01-28T21:45:52Z" finished-at="2018-01-28T21:45:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenHomePage -->
+        <test-method status="PASS" signature="ProductDetailsPage()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@35bbe5e8]" name="ProductDetailsPage" duration-ms="2078" started-at="2018-01-28T21:45:53Z" finished-at="2018-01-28T21:45:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductDetailsPage -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:com.adidas.app.TestSuite.AdidasUITests@35bbe5e8]" name="AfterTest" is-config="true" duration-ms="204" started-at="2018-01-28T21:45:55Z" finished-at="2018-01-28T21:45:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+      </class> <!-- com.adidas.app.TestSuite.AdidasUITests -->
+    </test> <!-- FirefoxTest -->
+  </suite> <!-- TestSuite -->
+</testng-results>
