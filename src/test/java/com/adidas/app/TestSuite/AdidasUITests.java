@@ -59,6 +59,7 @@ public class AdidasUITests extends FunctionalTest {
     @Test
     public void FavoritesPage() {
         AdidasHomePage home = new AdidasHomePage(driver);
-
+        home.emptyHeartIcons.get(0).click();
+        Assert.assertTrue(home.WishlistIconAppearance(driver).isDisplayed(), "Adding to favorites is failed!");
     }
 }

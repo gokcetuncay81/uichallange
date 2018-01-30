@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.List;
 
 public class AdidasHomePage extends PageObject {
@@ -29,11 +32,13 @@ public class AdidasHomePage extends PageObject {
     public List<WebElement> getTeasers = teasers.findElements(By.cssSelector("div[class*='teaser_container_']"));
     private WebElement bestOfAdidas = homeBody.findElement(By.xpath("//div[@data-auto-id='homepage']/div/div[3]"));
     public List<WebElement> itemsBestOfAdidas = bestOfAdidas.findElements(By.cssSelector("div[class *= 'item_wrapper___']"));
+    public List<WebElement> emptyHeartIcons = bestOfAdidas.findElements(By.cssSelector("[class *= 'toggle_wishlist_button___']"));
 
     @FindBy(css = "form[action ='/on/demandware.store/Sites-adidas-FI-Site/fi_FI/Newsletter-Subscribe']")
     WebElement formNewsletter;
     public WebElement joinAdidas = formNewsletter.findElements(By.cssSelector("div[class = 'col-l-12 col-s-12 no-gutters']")).get(0);
     public WebElement emailSubmit = formNewsletter.findElement(By.cssSelector("[type='email']"));
+    public WebElement wishlistHeart;
 
     public AdidasHomePage(WebDriver driver){
         super(driver);
@@ -42,5 +47,11 @@ public class AdidasHomePage extends PageObject {
     public AdidasProductDetailsPage NavigateToGallery() {
         itemsBestOfAdidas.get(0).click();
         return new AdidasProductDetailsPage(driver);
+    }
+
+    public WebElement WishlistIconAppearance(WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, 3);
+        wishlistHeart = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class *= 'wishlist_icon_container___']")));
+        return wishlistHeart;
     }
 }
