@@ -1,4 +1,4 @@
-# uichallange
+# UI Challange
 
 To run the tests from terminal use the command below:
 mvn surefire-report:report
