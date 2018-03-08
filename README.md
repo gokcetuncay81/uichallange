@@ -1,4 +1,4 @@
-# uichallange
+# UI Challange
 
 To run the tests from terminal use the command below:
 mvn surefire-report:report
@@ -11,34 +11,27 @@ Here is the link for UI Test Repository:
 https://github.com/gokcetuncay81/uichallange
 This a maven repository and in pom.xml there are the list of dependencies and plugins.
 Let me briefly explain why did I need these dependencies and plugins in my project:
-1- “maven-compiler-plugin” This plugin is needed because of another dependency in my project: testng (see number-4).
-When using the parallel-execution feature of testng, I needed to upgrade my java to version 1.8 and I needed a compiler
-plugin in order to compile java-1.8.
+1- “maven-compiler-plugin” is used to explicity define JDK 1.8 because Intellij is using 1.5 by default, and 1.5 does not support Generics which I have used for traversing image types desktop, mobile and tablet. 
 2- “maven-surefire-plugin” For report output.
 3- “selenium-java” For WebDriver automation.
-4- “Testng” As the test framework.
+4- “TestNG” As the test framework.
 
 There are 3 test cases written;
-1st Test Case; is to check is the HomePage is propoerly opened. I tried to cover all the features as much as I can but
-there still are some cases which are not covered in page body.
-2nd Test Case; is a click and navigate scenario. Opening the home page and click one the first product and make sure it
-is navigating me to the product details page. And if product details page is opened properly. (There are more features
-to be covered in product page.)
-3nd Test Case; is to sign the first Best Of Adidas product as favorite. And make sure it is reflected on the top menu
-as wishlist.
+1st Test Case; is to check if the HomePage is propoerly opened. There are more features to be checked in page body but I tried to keep it simple.
+2nd Test Case; is a click and navigate scenario. Opening the home page and clicking one of the first product and make sure that product details page is opened properly. (There are more features to be checked when opening in product page but I tried to keep it simple.)
+3rd Test Case; is to sign the first "Best of Adidas" product as favorite. And make sure it is reflected on the top menu as wishlist.
 
-For waiting the DOM elements to be located on the page, I used Implicit Wait for project.
+For waiting the DOM elements to be located on the page, I used Implicit Wait for the entire project.
 And for signing one product as favorite, and to wait DOM element is displayed dynamically on page, I used the
-ExpectedConditions class of selenium.
+ExpectedConditions class of Selenium.
 
-This project is written in Page Object Modelling standarts. And also when opening each page, checking that pages'
-features in related classes.
+While opening each page I check for that pages' elements in thier own Page classes.
 
+This project is written in Page Object Modelling standarts. 
 There is a PageObject class defining the Webdriver and initiating the elements at the very base level.
 There is a FunctionalTest class which is managing the actions to do before and after running the tests.
-Also cross-browsing is handled inside FunctionalTest class.
 
-These tests can run parallel and open several threads in order to save time. This feature is handled in testng.xml,
-besides defining the test suite to be executed.
+To execute test cases with different browsers in the local machine I have integrated TestNG framework with Selenium WebDriver.
+For this challange I chose two most popular browsers: Chorme and Firefox. These tests run parallel and open 2 (configurable) threads in order to save time. This feature is handled in testng.xml,
 
-Reporting is provided in two groups as ChromeTest report and FirefoxTest report.
+TestNG provides reporting by default with the help of surefire-reports, you can find the test reports under target folder: target/surefire-reports/index.html or you can try target/surefire-reports/emailable-report.html as a summary.
