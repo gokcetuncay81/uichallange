@@ -21,6 +21,7 @@ tags
 */.classpath
 */.project
 */.settings
+src/test-output/
 .cache-main
 .cache-tests
 *.sc
