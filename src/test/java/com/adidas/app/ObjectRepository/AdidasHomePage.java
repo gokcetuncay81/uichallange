@@ -13,20 +13,21 @@ public class AdidasHomePage extends PageObject {
     @FindBy(css = "[data-auto-id*='header-']")
     public WebElement header;
     @FindBy(css = "[data-auto-id *='glass-header-top']")
-    private WebElement upperMenu;
+    WebElement upperMenu;
     public List<WebElement> getUpperMenuItems = upperMenu.findElements(By.tagName("a"));
     @FindBy(css = "[data-auto-id ='logo']")
     public WebElement logo;
     @FindBy(css = "[data-auto-id = 'main-menu']")
     public WebElement mainMenu;
     public List<WebElement> getMainMenuItems = mainMenu.findElements(By.cssSelector("div[data-auto-id='glass-navigation-flyout']"));
-    @FindBy(css = "[data-auto-id = 'glass-search']")
-    public WebElement searchBox;
-    @FindBy(css = "[class *= 'header_cart_link___']")
-    public WebElement shoppingCart;
+
+//    @FindBy(css = "[class *='glass-search_']")
+    List<WebElement> searchBoxes;
+//    @FindBy(css = "[class *= 'header_cart_link___']")
+    List<WebElement> shoppingCarts;
 
     @FindBy(css = "div[data-auto-id='homepage']")
-    private WebElement homeBody;
+    WebElement homeBody;
     public WebElement mainCarousel = homeBody.findElement(By.cssSelector("div[data-auto-id='carousel-slider']"));
     private WebElement teasers = homeBody.findElements(By.cssSelector("div[class=stack]")).get(0);
     public List<WebElement> getTeasers = teasers.findElements(By.cssSelector("div[class*='teaser_container_']"));
@@ -38,20 +39,30 @@ public class AdidasHomePage extends PageObject {
     WebElement formNewsletter;
     public WebElement joinAdidas = formNewsletter.findElements(By.cssSelector("div[class = 'col-l-12 col-s-12 no-gutters']")).get(0);
     public WebElement emailSubmit = formNewsletter.findElement(By.cssSelector("[type='email']"));
-    public WebElement wishlistHeart;
+    List<WebElement> wishlistHearts;
 
-    public AdidasHomePage(WebDriver driver){
-        super(driver);
+    public AdidasHomePage(WebDriver driver, WebDriverWait wait){
+        super(driver, wait);
     }
 
     public AdidasProductDetailsPage NavigateToGallery() {
         itemsBestOfAdidas.get(0).click();
-        return new AdidasProductDetailsPage(driver);
+        return new AdidasProductDetailsPage(driver,wait);
     }
 
-    public WebElement WishlistIconAppearance(WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver, 3);
-        wishlistHeart = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class *= 'wishlist_icon_container___']")));
-        return wishlistHeart;
+    public WebElement WishListHeart() {
+        wishlistHearts = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[class*='wishlist_icon_container___']")));
+        return wishlistHearts.get(1);
     }
+
+    public WebElement SearchBox() {
+        searchBoxes = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class *='glass-search_']")));
+        return searchBoxes.get(1);
+    }
+
+    public WebElement ShoppingCart() {
+        shoppingCarts = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("[class *= 'header_cart_link___']")));
+        return shoppingCarts.get(1);
+    }
+
 }

@@ -27,14 +27,14 @@ public class AdidasUITests extends FunctionalTest {
 
     @Test
     public void OpenHomePage() {
-        AdidasHomePage home = new AdidasHomePage(driver);
+        AdidasHomePage home = new AdidasHomePage(driver, wait);
         Assert.assertTrue(home.header.isDisplayed(),"Header is not found");
         Assert.assertEquals(home.getUpperMenuItems.size(), 4);
         Assert.assertTrue(home.logo.isDisplayed(),"Logo is not found");
         Assert.assertTrue(home.mainMenu.isDisplayed(),"Main menu is not found");
         Assert.assertEquals(home.getMainMenuItems.size(),6,"Missing menu item");
-        Assert.assertTrue(home.searchBox.isDisplayed());
-        Assert.assertTrue(home.shoppingCart.isDisplayed());
+        Assert.assertTrue(home.SearchBox().isDisplayed(),"Search is missing!");
+        Assert.assertTrue(home.ShoppingCart().isDisplayed());
 
         Assert.assertTrue(home.mainCarousel.isDisplayed(),"Main carousel is not found");
         Assert.assertTrue(home.getTeasers.size()>0, "Teasers should have at least 1 item");
@@ -46,9 +46,9 @@ public class AdidasUITests extends FunctionalTest {
 
     @Test
     public void ProductDetailsPage() {
-        AdidasHomePage home = new AdidasHomePage(driver);
+        AdidasHomePage home = new AdidasHomePage(driver, wait);
         AdidasProductDetailsPage pdp = home.NavigateToGallery();
-        Assert.assertTrue(pdp.productImage.isDisplayed(), "Product main image is not found");
+        Assert.assertTrue(pdp.ProductImage().isDisplayed(), "Product main image is not found");
         Assert.assertTrue(pdp.orderInformation.isDisplayed(),"");
         Assert.assertTrue(pdp.productInformation.isDisplayed());
         Assert.assertTrue(pdp.priceBig.isDisplayed());
@@ -58,8 +58,8 @@ public class AdidasUITests extends FunctionalTest {
 
     @Test
     public void FavoritesPage() {
-        AdidasHomePage home = new AdidasHomePage(driver);
+        AdidasHomePage home = new AdidasHomePage(driver, wait);
         home.emptyHeartIcons.get(0).click();
-        Assert.assertTrue(home.WishlistIconAppearance(driver).isDisplayed(), "Adding to favorites is failed!");
+        Assert.assertTrue(home.WishListHeart().isDisplayed(), "Adding to favorites is failed!");
     }
 }
