@@ -1,12 +1,11 @@
 package com.adidas.app.TestSuite;
 
 import com.adidas.app.ObjectRepository.AdidasProductDetailsPage;
-import com.adidas.app.ObjectRepository.FunctionalTest;
 import org.testng.annotations.Test;
 import com.adidas.app.ObjectRepository.AdidasHomePage;
 import org.testng.Assert;
 
-public class AdidasUITests extends FunctionalTest {
+public class AdidasUITests extends BaseTest {
 //    WebDriver driver;
 //    String chromeNodeUrl;
 //    String firefoxNodeUrl;
@@ -27,7 +26,8 @@ public class AdidasUITests extends FunctionalTest {
 
     @Test
     public void OpenHomePage() {
-        AdidasHomePage home = new AdidasHomePage(driver, wait);
+        AdidasHomePage home = new AdidasHomePage(driver,wait);
+
         Assert.assertTrue(home.header.isDisplayed(),"Header is not found");
         Assert.assertEquals(home.getUpperMenuItems.size(), 4);
         Assert.assertTrue(home.logo.isDisplayed(),"Logo is not found");
@@ -47,6 +47,7 @@ public class AdidasUITests extends FunctionalTest {
     @Test
     public void ProductDetailsPage() {
         AdidasHomePage home = new AdidasHomePage(driver, wait);
+
         AdidasProductDetailsPage pdp = home.NavigateToGallery();
         Assert.assertTrue(pdp.ProductImage().isDisplayed(), "Product main image is not found");
         Assert.assertTrue(pdp.orderInformation.isDisplayed(),"");

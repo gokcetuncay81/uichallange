@@ -45,9 +45,9 @@ public class AdidasHomePage extends BasePage {
         super(driver, wait);
     }
 
-    public AdidasProductDetailsBasePage NavigateToGallery() {
+    public AdidasProductDetailsPage NavigateToGallery() {
         itemsBestOfAdidas.get(0).click();
-        return new AdidasProductDetailsBasePage(driver,wait);
+        return new AdidasProductDetailsPage(driver,wait);
     }
 
     public WebElement WishListHeart() {
