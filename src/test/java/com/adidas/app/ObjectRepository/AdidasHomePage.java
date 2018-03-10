@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class AdidasHomePage extends PageObject {
+public class AdidasHomePage extends BasePage {
     @FindBy(css = "[data-auto-id*='header-']")
     public WebElement header;
     @FindBy(css = "[data-auto-id *='glass-header-top']")
@@ -45,9 +45,9 @@ public class AdidasHomePage extends PageObject {
         super(driver, wait);
     }
 
-    public AdidasProductDetailsPage NavigateToGallery() {
+    public AdidasProductDetailsBasePage NavigateToGallery() {
         itemsBestOfAdidas.get(0).click();
-        return new AdidasProductDetailsPage(driver,wait);
+        return new AdidasProductDetailsBasePage(driver,wait);
     }
 
     public WebElement WishListHeart() {

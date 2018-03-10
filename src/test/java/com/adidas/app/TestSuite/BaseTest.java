@@ -1,4 +1,4 @@
-package com.adidas.app.ObjectRepository;
+package com.adidas.app.TestSuite;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +10,7 @@ import org.testng.annotations.Parameters;
 
 import java.util.concurrent.TimeUnit;
 
-public class FunctionalTest {
+public class BaseTest {
 
     public WebDriver driver;
     public WebDriverWait wait;

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AdidasProductDetailsPage extends PageObject {
+public class AdidasProductDetailsPage extends BasePage {
 
     public AdidasProductDetailsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
