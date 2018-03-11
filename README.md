@@ -35,3 +35,5 @@ To execute test cases with different browsers in the local machine I have integr
 For this challange I chose two most popular browsers: Chorme and Firefox. These tests run parallel and open 2 (configurable) threads in order to save time. This feature is handled in testng.xml,
 
 TestNG provides reporting by default with the help of surefire-reports, you can find the test reports under target folder: target/surefire-reports/index.html or you can try target/surefire-reports/emailable-report.html as a summary.
+
+I am taking screenshots when the status of test is FAILED. For naming the image accordingly with the failed tests' name, I am using FileUtils class which is coming with apache-io library, which can be found in pom.xml
